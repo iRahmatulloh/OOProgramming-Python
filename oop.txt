@@ -1,0 +1,237 @@
+-- Object oriented dasturlar o’nlab balki yuzlab obyektlardan iborat bo’ladi va bunday dasturlar uchun dastur boshi yoki oxiri degan tushunchalar nisbiy bo’ladi.
+ 
+-- Object oriented dasturlar bajarilishida qat’iy ketma-ketlikka amal qilmaydi. Foydalanuvchi istlagan obyektga murojat qilishi, 
+	uning ustida turli amallar bajarishi mumkin. O’z navbatida bitta obyektga murojat ortidan boshqa obyektlar ham faollashishi mumkin.
+
+
+
+		###			###			###
+
+
+Procedual Programming - | -> method <- deb nomlangan kichik bo'laklarga bo'linadi.
+
+OOP(obyektga yo'naltirilgan dasturlash) qisqacha OOP deb ataladi.
+  - - Bu Classlar va Objectlar konseptsiyasiga tayanadigan bir paradigma(tushuncha)
+
+Paradigm - biror narsani tuzulish modeli yokida yaqqol tushunarli misoli.
+
+Objects  -- ma`lumotlar va ularning hatti-harakatlari to'plami.
+
+Class -- bu obyektlarni qurish uchun tayyorlanadigan shablon.
+
+OOP -- DasturlaSH tili yoki qandaydir qurol emas, balkim u paradigm bo'lib
+    biror dasturni yoki kodni tuzulish strukturasini soddalashtirish uchun 
+    						kerak bo'lgan dizaynlash uslubi.
+
+	
+	Properties					Methods
+	    |						   |
+	 Xossalar					uslublar
+	    |						   |
+	Attribute					Behavior
+
+Properties  -- Xossalar        		Methods --  Uslublar
+	|							  |
+Ism: Jasber						Yugurish
+Yosh: 19						Sakrash
+Millat: Britian					Gapirish
+
+
+Attributes -- o'zgaruvchilar bo'lib ular obyektalar haqidagi ma'lumotlarni
+		o'zida saqlab turadi.
+
+Methods -- bu funksiyalar bo'lib, ular obyektlarni harakatga keltiradi va
+	istalgan attribute-lar ustida amallar qila oladi.
+
+Class-larni nomlashda PascalCase ishlatiladi!
+
+	# # #
+
+class MyClass:
+	pass
+
+obj = MyClass() <- obyektlar shu zaylda yaratilinadi! 
+	
+
+Initializing Objects -- Obyektlarni ishga tushurish
+
+Initilize -- obyektga boshlang'ich ma'lumotlarni berish jarayoni
+
+-- Ikkita pastki chiziq bu Python interpreter alohida 
+	holat sifatida ko'rib chiqadigan maxsus method ekanligini anglatadi.
+
+Instance -- namuna
+
+Class variables -- barcha obyektlar uchun bir xil bo'ladi. Uning o'zgarishi butun
+	 obyektlarga o'zgarish keltirib chiqaradi
+
+Instance variables -- har bir obyekt uchun alohida bo'ladi. Uning o'zgarishi faqat 
+	o'sha obyektning o'ziga ta'sir qiladi.
+
+
+			####					####
+
+						| Methods |	--  23.02.2023  --
+
+
+3 xil methodlar mavjud:
+	- Instance methods
+	- Class methods
+	- Static methods
+
+-- Class ichida tuziladigan funksiyalarni biz methodlar deb ataymiz.
+
+- Class method -- class bilan bog'liq bo'lib, u classga tegishli bo'lgan 
+	har qanday qiymatga kirish yoki olish huquqiga ega. Uning uchun alohida obyekt
+	yaratish shart emas shunchaki class nomi yetarli bo'ladi.
+
+- Static method -- class bilan bog'liq ammo klassga yoki uning biror ma'lumotlariga
+	kirish yoki olish huquqi mavjud emas.
+
+
+					     -- Access Modifiers -- 23.02.2023 --
+
+Access Modifiers -- OOPda class methodlari yoki attributelariga kirish
+	darajasini aniqlash uchun ishlatinuvchi atama.
+
+ 3 xil Access modifierlar mavjud:
+	-- Public - Ommaviy 
+	-- Private - Shaxsiy
+	-- Protected - Himoyalangan                      						#######################################
+
+- Private | Shaxsiy -- methodlar yoki attributelarni shaxsiylashtirish 
+	uchun ular oldidan 1 ta yoki 2ta "-" qo'yish kifoya.
+	- Biroq buni tashqaridan ochish mumkin agarda unga berilgan nomni
+		boshqa odam bilsa
+
+	###				###				###
+		
+						| Encapsulation | -- 23.02.2023 --
+
+
+- Data Hiding --OOP principle bo'lib u obyektning ichki ma'lumotlariga 
+	  kirishni taqiqlaydi, va boshqalar uchun kirib bo'lmas ma'lumotga aylantiradi.
+	
+	- Bundan maqsad obyektning ichki malumotlarini saxfsiz saqlash va faqat 
+		kerakli yoki tushunarli uslubda o'zgartirish.
+
+2 xil turi mavjud:
+	-- Encapsulation | Kapsulalash
+	-- Abstraction | Mavhumlik
+
+
+-- Encapsulation - biror muhim ma'lumot yoki faktni 
+	ko'rsatish yoki ifodalash jarayoni
+
+	-- Method chaqirilganda yuz beradigan jarayon -> | Encapsulation | 
+
+	-- Encapsulation qilishdagi eng yaxshi narsalardan biri bu barcha 
+		method yoki attributelarni -private- qilish
+
+	-- Getter - maethodlari ma`lumotlarni o`qish imkonini beradi.
+	
+	-- Setter - methodlari ma'lumotlarni o'zgartirish imkoniyatini beradi.
+
+
+	-- getProperty() - Xossani Ber
+	-- setProperty(value) - Xossani O'rnat 
+
+
+-- OOP da inheritance - mavjud bo'lgan klassdan boshqa bir yangi (bola) klass yaratish.
+
+   -- Obyektlar o'rtasidagi bog'liqlik bo'lgan joylarda.
+
+			-- 2 --
+
+-- Parent Class(Base/Super) -- Bu classni umumiy xususiyatlaridan boshqa classda 
+	qayta foydalanish mumkin.
+
+-- Child Class(Sub/Derived) -- Bu class Parent classni meros qilib oladi.
+
+-- Child classda parent classdagi barcha public method va attributelar mavjud bo''ladi.
+
+
+			----	Super() ---
+
+-- super() - bu Parent Classdagi attribute va methodlarni child classga qayta yozmasdan olib kelish uchun ishlatiladi.
+
+	--- 3 xil turi mavjud:
+
+   -- 1.Accessing Parent Class Properties            ##################
+
+   -- 2.Calling Parent Class Methods                #############
+
+   -- 3. using with Initializer                      ###########
+
+ 
+		-- Meros olishning 5 turi mavjud --
+
+   -- 1.Single Inheritance -> Bir meroslik
+   
+   -- 2. Multi-level Inheritance -> Ko'p darajali  meroslik
+
+   -- 3. Hierarchical Inheritance  -> Bog'langan meroslik
+
+   -- 4. Multiple Inheritance -> Ko'p meroslik
+
+   -- 5. Hybrid Inheritance -> GIbrid meroslik
+
+
+-- 1.Single Inheritance -> Faqat yagona classdan meros olish Single Inheritance deyiladi.
+
+-- 2. Multi-level Inheritance -|> Meros olgan classdan meros olish 
+
+-- 3. Hierarchical Inheritance -> Qachonki bir-necha classlar bitta classdan meros olishsa. 
+
+-- 4. Multiple Inheritance -> Qachonki child class bittadan ko'p parent classdan meros olsa u  Multiple Inheritance deyiladi.
+
+-- 5. Hybrid Inheritance -> MUltiple va Multi-level Inheritancelarning kombinatsion meros olishi Hybrid Inheritance deyiladi.
+
+
+
+-- Merosliklarning afzalliklari:
+	-- Re-usebilaty - Kodni qayta ishlatishga qulaylashtiradi.
+
+	-- Code Modification - Kodni o'zgartirish ososn. Shunchaki Parent classdagi
+		o'zgarish butun boshqa joylardagi o'zgarishlarga sabab bo'ladi va har bir joyda
+			o'zgartirish oldini oladi.
+
+	-- Extensibility - Kodni kengaytirish oson.
+
+	-- Data Hiding - Parent class ba'zi ma'lumotlarni xavfsiy saqlaydi bu esa asosiy ma'lumotlar 
+		o'zgarishini oldini oladi.
+
+		
+		###		###		###		###
+
+						12.Polymorphism || 03.03.2023
+
+-- Polymorphism - bu iiki Grek so'zini yig'indisi bo'lib (Poly - ko'p)	(Morph - shakllar) ko'p shakllar deb tarjima qilinadi.
+
+-- Method overriding - Parent classdagi methodlarni Child classda qayta yaratish.
+
+
+-- A B C -|- Abstact Base Class -> yani Mavhum asossiy sinf
+
+-- A B C dan foydalaanib classalarda object yaratish mumkin yoki mumkinmasligini boshqarish imkonini beradi
+
+-> qo'llanishi:
+	import ABC 		<- built-in 
+
+	class Cat(ABC):
+		@abstactmethod      <- methodni run qilinishiga taqiq qo'yadi va error chiqaradi
+		def __init__(self):
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

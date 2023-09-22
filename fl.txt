@@ -1,0 +1,100 @@
+					   - - Functional Programming	07.03.2023
+
+-- Functional programming ham bir paradigma bo'lib u hech qanday texnologiya yoki dasturlash tili emas balkim dizaynlash uslubidagi tushuncha.
+
+-- Toza (Pure) function - bu input berganda heech qanday yomon yoki xato ta'sirisiz output qaytaradigan funksiya.
+
+-- Functional Programming - dastur asosan Pure function_lardan tuzilgan bo'ladi.  ------+++++
+
+-- Pure function - Ular doim bir xil inputlarga bir xil output qaytaradi va ular hech qanday side-effect(zarar)ga ega emas va har qanday qiymat bilan ishlay oladi.
+
+-- Recrusion - Ularda hech qanday 'for' yoki 'while' looplar yo'q ular bu ishni rekursiya bilan bajaradi.
+
+-- First-Class Function - Har qanday funksiya bu qiymat bo'la oladi oladi va qiymat bo'la olganidan keyin boshqa funksiyaga uni argument qilib bersa bo'ladi. Xatto uni biror o'zgaruvchi yoki data structure da saqlasa ham bo'ladi 
+
+-- Variables are Immutable -- Biz o'zgaruvchilarni kiritganimizdan so'ng o'zgartira olmaymiz. Yangi o'zgaruvchi yaratishimiz mumkin lekin eskisini o'zgartira olmaymiz.
+
+
+		---		OOP va FP o'rtasidagi farqlar:
+
+
+	- OOP	- Classlar va Objectlardan foydlanib muammoni yechishga urg'u beradi
+	
+	- FP - Funksiyalardan foydalanib muammoni yechishga urg'u beradi.
+
+	
+	- OOP - Amaldagi elementlar objektlar va methodlar. Objektlardagi ma'lumotlarni o'zgartirish mumkin.
+
+	- FP - Asosiy elementlar funksiyalar va o'zgaruvchilar. Funksiyadagi ma'lumotlar yaratilgandan keyin o'zgartirilmaydi.
+
+
+	- OOP - Imperative ya'ni muhumlik modeliga to'g'ri keladi.
+
+	- FP - Declarative ya'ni yaratish modeliga to'g'ri keladi.
+
+
+	- OOP - Iteratsiya uchun loop ishlatilinadi.
+
+	- FP  - Iteratsiya uchun recursion ishlatadi.
+
+
+	- OOP - Parallel dasturlashni imkoni yo'q
+
+	- FP - Parallel dasturlash mumkin.
+
+
+
+
+								-- 04 - Inner Functions
+
+--  - Funksiyalar funksiya qaytara oladi!
+
+--  - Log - Jurnal, jarayonlarni qayd qilib boradi. Xodisalarni o'zida saqlaydi. 
+
+
+-- Lambda - Funksiyaga funksiyani argument qilib berish uchun 
+
+
+														-- Map -- Filters -- reduce  13.03.23
+
+-- filter -> nimanidir filter qilish uchun 
+
+-- map -> har bir qiymatga tasir o'tkazish uchun 
+
+-- reduce -> qisqartirish kamaytirish degani. U ko'p xollarda xarakatlarni kamaytirish uchun ishlatiladi.
+
+	# reduse factorials 
+	from functools import reduce
+		
+	-> factorial = reduce(lambda x, y: x * y, [1,2,,3,4,5,6])
+	-> print(factorial)
+
+	-- funksiyaning asosiy vazifasi hisob kitobda yaxlitlik yaratish va tez amallarni tugatish
+		-- Yaxlitlik | Ma’lumotni aniq va ishonchli ekanligiga ishonch hosil qilish
+
+
+															-- 17.03.23 -- Recursion
+
+ # factorial - recursion
+
+	def factorial(n):
+		return n if n == 1 else n * factorial(n - 1)
+
+# -> print(factorial(4))
+
+-- Recursiyada funksiya o'zini o'zi qayta qayta chaqira oladi.
+
+-- recursiada muhim narsalar to'g'ri shart yozish va to'g'ri tugash.
+
+-- funksiya o'zini o'zi chaqirishi recursiya deyiladi.
+
+
+						-- 11.working with arguments
+
+-- * necchtaligini sanydi va uni list qilib saqlaydi. Shu orqali bitta o'zgaruvchida saqlanadi.
+
+	-- a, b, c = [1,2,3,4]  <-- xato
+	
+	-- a, *b, c = [1,2,3,4]
+
+-- Funksiyalarda ular tuplega saqlanadi. 
